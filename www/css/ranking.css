@@ -1,0 +1,26 @@
+/* Show priority 1 at 320px (20em x 16px) */
+@media screen and (min-width: 20em) {
+   .my-custom-class th.ui-table-priority-1,
+   .my-custom-class td.ui-table-priority-1 {
+     display: table-cell;
+   }
+}
+/* Show priority 2 at 480px (30em x 16px) */
+@media screen and (min-width: 30em) {
+   .my-custom-class  th.ui-table-priority-2,
+   .my-custom-class td.ui-table-priority-2 {
+     display: table-cell;
+   }
+}
+
+/* Manually hidden */
+.my-custom-class th.ui-table-cell-hidden,
+.my-custom-class td.ui-table-cell-hidden {
+  display: none;
+}
+
+/* Manually shown */
+.my-custom-class th.ui-table-cell-visible,
+.my-custom-class td.ui-table-cell-visible {
+   display: table-cell;
+}

@@ -1,0 +1,43 @@
+.circle-mask {
+  padding-top: 10px;
+  padding-left: 20px;
+  text-align: center;
+  height: 56px;
+  width: 100%;
+  border-radius: 50%;
+  margin-left: 0px;
+  margin-right: auto;
+  display: block;
+  z-index: 100;
+  background-size: 56px;
+  background-repeat: no-repeat;
+  -webkit-transition: opacity 0.075s;
+  -moz-transition: opacity 0.075s;
+  -ms-transition: opacity 0.075s;
+  -o-transition: opacity 0.075s;
+  transition: opacity 0.075s;
+  margin-bottom: 10px;
+}
+
+.circle {
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline;
+  z-index: 101;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  opacity: 0.99;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+.info_auth {
+  float:left;
+  padding: 10px;
+  text-align: left;
+}
+
