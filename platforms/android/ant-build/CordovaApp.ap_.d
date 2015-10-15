@@ -26,6 +26,7 @@
 /var/www/html/mobilectures-app/platforms/android/assets/_where-is-www.txt \
 /var/www/html/mobilectures-app/platforms/android/assets/www \
 /var/www/html/mobilectures-app/platforms/android/assets/www/spec \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/index.html \
 /var/www/html/mobilectures-app/platforms/android/assets/www/cordova_plugins.js \
@@ -43,6 +44,12 @@
 /var/www/html/mobilectures-app/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine-html.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine.css \
 /var/www/html/mobilectures-app/platforms/android/assets/www/spec/lib/jasmine-1.2.0/MIT.LICENSE \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/org.apache.cordova.device \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.background-mode \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.background-mode/www \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.background-mode/www/background-mode.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/session.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/account.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/lib \

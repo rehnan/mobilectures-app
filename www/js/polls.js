@@ -38,7 +38,7 @@ ml.polls = {
 			var poll = ml.polls.current();
 
 			$("#poll-info").html("<span><center><b>Título: </b>"+poll.title+"</center></span>").enhanceWithin();
-			$("#poll-question").html("<hr><p>"+poll.question+"</p>").enhanceWithin();
+			$("#poll-question").html("<p>"+poll.question+"</p><hr>").enhanceWithin();
 			$("#poll-alternatives").html('');
 
 			//(poll.choice_multiple) ? poll.type_input = 'checkbox' : poll.type_input = 'radio'

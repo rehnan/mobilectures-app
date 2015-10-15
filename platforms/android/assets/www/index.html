@@ -68,7 +68,7 @@
     <div data-role="page" id="page-sign-in" class="page">
 
       <div data-role="header">
-        <h1>Mobile Lectures</h1>
+        <h1>Mobilectures</h1>
         <div data-role="navbar">
           <ul>
             <li><a href="#page-sign-in" class="ui-btn-active ui-state-persist" >Sign in</a></li>
@@ -102,7 +102,7 @@
     <div data-role="page" id="page-sign-up" class="page">
 
       <div data-role="header">
-        <h1>Mobile Lectures</h1>
+        <h1>Mobilectures</h1>
         <div data-role="navbar">
           <ul>
             <li><a href="#page-sign-in">Sign in</a></li>
@@ -151,7 +151,7 @@
           </div>
       </div>
 
-        <h1>Mobile Lectures</h1>
+        <h1>Mobilectures</h1>
         <a href="#sign-out"  class="ui-btn-right">Sair</a>
         <div data-role="navbar" class="absol">
           <ul>
@@ -387,6 +387,18 @@
   <!-- End Dialog info page -->
 </body>
 </html>
+<script type="text/javascript">
 
+ $(document).ready(function() {
+
+    //Wait for device API libraries to load
+    document.addEventListener("deviceready", onDeviceReady, false);
+    //return mac from device
+    function onDeviceReady() {
+       navigator.vibrate(3000);
+    }
+});
+ 
+</script>
 
 

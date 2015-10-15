@@ -132,7 +132,7 @@ render_question: function (quiz) {
 			$("#quiz-alternatives").append(alt).enhanceWithin();
 		});
 
-		$("#quiz-alternatives").append("<button id='send_answer_quiz'>Responder Enquete </button>").enhanceWithin();
+		$("#quiz-alternatives").append("<button id='send_answer_quiz'>Responder Quiz </button>").enhanceWithin();
 		
 		//Start timer to answer question...
 		ml.timer.stop();
