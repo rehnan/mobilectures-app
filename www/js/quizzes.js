@@ -26,7 +26,7 @@ ml.quizzes = {
 			if(!ml.session.user.current()) { return $.mobile.changePage('#page-sign-in'); }
 			$.mobile.changePage('#page-quiz');
 			ml.login.render_account();
-			$("#timer").html('');
+			$("#time").html('');
 			$("#listview-quizzes").html('');
 			$("#poll-alternatives").html('');
 			if(ml.quizzes.current() === null) {
@@ -74,7 +74,7 @@ ml.quizzes = {
 				//"<a href='#'  aria-haspopup='true' aria-owns='purchase' aria-expanded='true' class='ui-btn ui-btn-icon-notext ui-icon-gear ui-btn-a' title='Purchase album'></a>" +
 			});
 } else {
-	ml.flash.info('#page-quiz', 'Você possui '+count_quizzes+' quizzes para responder!');
+	ml.flash.info('#page-quiz', 'Mantenha-se logado para participar de quizzes!');
 }
 },
 
@@ -140,17 +140,15 @@ render_question: function (quiz) {
 		
 		console.log(question.time);
 		console.log(ml.timer.current());
-		(ml.timer.current() === 0) ? ml.timer.set_timer(question.time) : ml.timer.set_timer(ml.timer.current());
-		console.log('Iniciando Timer...');	
-		 ml.timer.start(true);
-		if(ml.timer.current() === 1) {
-		  $("#time").html("<b> Tempo esgotado... </b>").enhanceWithin();
-		  ml.timer.stop();
+		if (ml.timer.current() === null) { 
+			ml.timer.set_timer(question.time);
+		} else {
+		    ml.timer.set_timer(ml.timer.current());
 		}
-		
+		ml.timer.start(true);
 	} else {
-		ml.timer.stop();
 		ml.timer.reset();
+		ml.timer.stop();
 		ml.quizzes.set_current(null);
 		ml.quizzes.render();
 		if (quiz !== 'done') { ml.flash.success('#page-quiz', 'Quiz finalizado com sucesso!'); }
@@ -181,12 +179,15 @@ send_answer: function () {
 			if(data.errors) {
 				if(data.errors.alternative) {
 					//Start timer
-					(ml.timer.current() > 1) ? ml.timer.start(true) : ml.timer.stop();
+					(ml.timer.current() > 0) ? ml.timer.start(true) : ml.timer.stop();
 					console.log('Erro - Tempo continua...');
 					ml.flash.error('#page-quiz', data.errors.alternative[1]);
 				} else {
 					ml.timer.stop();
 					ml.timer.reset();
+					var quiz = ml.quizzes.current();
+					quiz.status = 'closed';
+					ml.quizzes.update(quiz, form.index);
 					console.log('Tempo interrompido - Quiz Encerrado!!');
 					console.log(data.errors);
 					ml.flash.error('#page-quiz', data.errors);
@@ -196,8 +197,8 @@ send_answer: function () {
 				return false;
 			}
 
-			ml.timer.stop();
 			ml.timer.reset();
+			ml.timer.stop();
 
 			ml.flash.success('#page-quiz', 'Resposta enviada com sucesso!');
 			var quiz = ml.quizzes.current();

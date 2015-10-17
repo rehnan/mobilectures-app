@@ -63,7 +63,7 @@ ml.polls = {
 			$("#poll-question").html('')
 			$("#poll-alternatives").html('');
 
-			ml.flash.info('#page-poll', 'Você não possui enquetes para responder!');
+			ml.flash.info('#page-poll', 'Mantenha-se logado para participar de enquetes!');
 		}
 	},
 

@@ -80,13 +80,13 @@
       <div data-role="main" class="ui-content">
         <form id="form-sign-in">
           <label> Chave da sessão </label>
-          <input type="text"value="123456" id="session_id" name="session_id">
+          <input type="text"value="" id="session_id" name="session_id" placeholder="Chave de Sessão">
 
           <label> Email </label>
-          <input type="email" value="rehnancarolino@live.com" id="user_email" name="user[email]">
+          <input type="email" value="" id="user_email" name="user[email]" placeholder="Email">
 
           <label> Senha </label>
-          <input value="abc123" type="password" id="user_password" name="user[password]" >
+          <input value="" type="password" id="user_password" name="user[password]" placeholder="Senha">
 
           <input type="submit" value="Login" id="btn_login">
         </form>
@@ -116,17 +116,17 @@
 
           <div class="form-group">
             <label> Nome </label>
-            <input type="text" id="user_name" name="user[name]">
+            <input type="text" id="user_name" name="user[name]" placeholder="Nome e Sobrenome">
           </div>
 
           <div class="form-group">
             <label> Email </label>
-            <input type="email" id="user_email" name="user[email]">
+            <input type="email" id="user_email" name="user[email]" placeholder="Email">
           </div>
 
           <div class="form-group">
             <label> Senha </label>
-            <input type="password" id="user_password" name="user[password]" >
+            <input type="password" id="user_password" name="user[password]" placeholder="Senha">
           </div>
 
           <input type="submit" value="Sign up" id="btn-sign-up">
@@ -210,13 +210,15 @@
           <button id="send_doubt">Enviar Dúvida </button>
         </form>
 
-        <table data-role="table" id="doubts-table" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+        <table data-role="table" class='ui-body-d ui-shadow table-stripe ui-responsive' id="doubts-table">
                    <thead>
-                       <tr class="ui-bar-d">
-                           <th>Dúvida</th>
-                           <th>Descrição</th>
-                           <th>Data</th>
-                           <th>Respondida</th>
+                      <tr>
+                        <th colspan="3"><center>Lista de dúvidas enviadas</center></th>
+                      </tr>
+                       <tr>
+                           <th data-priority="1"></th>
+                           <th data-priority="2"></th>
+                           <th data-priority="3"></th>
                        </tr>
                    </thead>
                    <tbody>
@@ -298,8 +300,8 @@
      </ul>
      <form id="form-quiz" novalidate>
        <div class="form-group">
+        <div id="quiz-info" class="row"></div><br>
         <div id="timer"></div>
-        <div id="quiz-info" class="row"></div>
         <div id="quiz-question" role="main" class="ui-content jqm-content"></div>
        
         <div id="quiz-alternatives"></div>

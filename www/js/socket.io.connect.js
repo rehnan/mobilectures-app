@@ -70,6 +70,7 @@ socket.on('polls-receive', function(poll){
 
 socket.on('quizzes-receive', function(quiz){
 	console.log('Quizzzz');
+	ml.flash.clear_this_page('#page-quiz');
 	ml.quizzes.add(quiz);
 	ml.quizzes.badge_count();
 	//create ranking here call method

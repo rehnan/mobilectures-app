@@ -24,8 +24,8 @@ ml.timer = {
    decrementTimer: function () {
    		if(!ml.session.user.current()) { return false; }
    		var value = JSON.parse(ml.timer.storage.getItem('timer_'+ml.session.user.current().email));
-   		value--;
-   	    ml.timer.storage.setItem('timer_'+ml.session.user.current().email, JSON.stringify(value));
+   		(value > 1) ? value-- : value = 0;
+   	   ml.timer.storage.setItem('timer_'+ml.session.user.current().email, JSON.stringify(value));
    },
 
    current: function () {

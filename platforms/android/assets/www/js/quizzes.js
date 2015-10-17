@@ -28,6 +28,7 @@ ml.quizzes = {
 			ml.login.render_account();
 			$("#timer").html('');
 			$("#listview-quizzes").html('');
+			$("#poll-alternatives").html('');
 			if(ml.quizzes.current() === null) {
 				ml.flash.clear_this_page('#page-quiz');
 				ml.quizzes.render();
@@ -120,9 +121,9 @@ render_question: function (quiz) {
 	if(quiz && quiz.questions && quiz.questions.length > 0) {
 
 		var question = quiz.questions.shift();
-
-		$("#quiz-info").html("<span><center><b>Título: </b>"+quiz.title+"</center></span>").enhanceWithin();
-		$("#quiz-info").html("<input type='hidden' name='quiz' value='"+quiz.id+"'><input type='hidden' name='quizquestion' value='"+question.id+"'><input type='hidden' name='listener' value='"+ml.session.user.current().id+"'><input type='hidden' name='correct_alternative' value='"+question.correct_alternative+"'><input type='hidden' name='pointing' value='"+question.points+"'><input type='hidden' name='index' value='"+quiz.index+"'>");
+		var header_title = "<span><center><b>Título: </b>"+quiz.title+"</center></span>";
+		
+		$("#quiz-info").html(header_title+"<input type='hidden' name='quiz' value='"+quiz.id+"'><input type='hidden' name='quizquestion' value='"+question.id+"'><input type='hidden' name='listener' value='"+ml.session.user.current().id+"'><input type='hidden' name='correct_alternative' value='"+question.correct_alternative+"'><input type='hidden' name='pointing' value='"+question.points+"'><input type='hidden' name='index' value='"+quiz.index+"'>");
 		$("#quiz-question").html("<p>"+question.description+"</p><hr>").enhanceWithin();
 		$("#quiz-alternatives").html('');
 
@@ -136,9 +137,17 @@ render_question: function (quiz) {
 		
 		//Start timer to answer question...
 		ml.timer.stop();
-		ml.timer.set_timer(question.time);
-		ml.timer.start(true);
-		console.log('Iniciando Timer...');
+		
+		console.log(question.time);
+		console.log(ml.timer.current());
+		(ml.timer.current() === 0) ? ml.timer.set_timer(question.time) : ml.timer.set_timer(ml.timer.current());
+		console.log('Iniciando Timer...');	
+		 ml.timer.start(true);
+		if(ml.timer.current() === 1) {
+		  $("#time").html("<b> Tempo esgotado... </b>").enhanceWithin();
+		  ml.timer.stop();
+		}
+		
 	} else {
 		ml.timer.stop();
 		ml.timer.reset();

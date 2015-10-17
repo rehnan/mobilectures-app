@@ -24,7 +24,7 @@ ml.doubts = {
          var doubts = data.doubts;
          $.each(doubts, function(index, doubt){
            //console.log(doubt);
-           $('#doubts-table tbody').append("<tr><td>"+(index+1)+"</td><td>"+doubt.description+"</td><td>"+ml.doubts.formatDate(doubt.createdAt)+"</td><td>"+ml.doubts.bool(doubt.answered)+"</td></tr>").enhanceWithin();
+           $('#doubts-table tbody').append("<tr><td><b>Descrição: </b>"+doubt.description+"</td><td><b>Data de envio: </b>"+ml.doubts.formatDate(doubt.createdAt)+"</td><td><b>Status: </b>"+ml.doubts.bool(doubt.answered)+"</td></tr><br>").enhanceWithin();
         })
       });
  });
@@ -35,7 +35,7 @@ append_doubt: function (index, doubt) {
 },
 
 bool: function(bool) {
- return (bool) ? 'Sim' : 'Não';
+ return (bool) ? 'Respondida' : 'Não Respondida';
 },
 
 
@@ -65,9 +65,9 @@ formatDate: function(date) {
                    var doubt = data.doubt;
                    var index = data.index;
 
-                   $('#doubts-table tbody').append("<tr><td>"+index+"</td><td>"+doubt.description+"</td><td>"+ml.doubts.formatDate(doubt.createdAt)+"</td><td>"+ml.doubts.bool(doubt.answered)+"</td></tr>").enhanceWithin();
+                   $('#doubts-table tbody').append("<tr><td><b>Descrição: </b>"+doubt.description+"</td><td><b>Data de envio: </b>"+ml.doubts.formatDate(doubt.createdAt)+"</td><td><b>Status: </b>"+ml.doubts.bool(doubt.answered)+"</td></tr><br>").enhanceWithin();
                    //console.log(data.doubt.id);
-                   ml.flash.success('#page-doubt', 'Dúvida enviada com sucesso! '+data.doubt.id);
+                   ml.flash.success('#page-doubt', 'Dúvida enviada com sucesso! ');
              //ml.flash.clear();
              ml.forms.clear('#form-doubt');
              //Redireciona $.mobile.changePage('#page-sign-in');
