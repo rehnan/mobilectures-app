@@ -63,6 +63,7 @@ socket.on('welcome-msg', function(message){
 
 socket.on('polls-receive', function(poll){
 	console.log('Pollll');
+	app.notification('Enquete - Mobilectures', 'Você recebeu uma nova Enquete.');
 	ml.polls.add(poll)
 	ml.polls.badge_count();
 	ml.polls.render();
@@ -70,6 +71,7 @@ socket.on('polls-receive', function(poll){
 
 socket.on('quizzes-receive', function(quiz){
 	console.log('Quizzzz');
+	app.notification('Quiz - Mobilectures', 'Você recebeu um novo Quiz.')
 	ml.flash.clear_this_page('#page-quiz');
 	ml.quizzes.add(quiz);
 	ml.quizzes.badge_count();

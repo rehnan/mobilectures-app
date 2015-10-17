@@ -33,17 +33,25 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        app.notification('Mobilectures App', 'Seja Bem-vindo! (:');
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+    notification: function(title, text) {
+        if(!title && !text) { return false; }
+        //Local Notification
+        cordova.plugins.notification.local.schedule({
+            title: title,
+            text: text,
+            icon: "res://icon_min.png",
+        });
 
-        console.log('Received Event: ' + id);
+        //Vibrate notificaiton
+        navigator.vibrate(1000);
+
+        //Listener after click in notification
+        cordova.plugins.notification.local.on("click", function (notification) {
+            alert(notification.title);
+        });
+        return true;
     }
 };

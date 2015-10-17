@@ -7,6 +7,7 @@
 /var/www/html/mobilectures-app/platforms/android/res/drawable-port-xhdpi/screen.png \
 /var/www/html/mobilectures-app/platforms/android/res/values/strings.xml \
 /var/www/html/mobilectures-app/platforms/android/res/drawable-port-mdpi/screen.png \
+/var/www/html/mobilectures-app/platforms/android/res/drawable/icon_min.png \
 /var/www/html/mobilectures-app/platforms/android/res/drawable/icon.png \
 /var/www/html/mobilectures-app/platforms/android/res/xml/config.xml \
 /var/www/html/mobilectures-app/platforms/android/res/drawable-land-xhdpi/screen.png \
@@ -19,6 +20,7 @@
 /var/www/html/mobilectures-app/platforms/android/ant-build/res/drawable-land-mdpi/screen.png \
 /var/www/html/mobilectures-app/platforms/android/ant-build/res/drawable-port-xhdpi/screen.png \
 /var/www/html/mobilectures-app/platforms/android/ant-build/res/drawable-port-mdpi/screen.png \
+/var/www/html/mobilectures-app/platforms/android/ant-build/res/drawable/icon_min.png \
 /var/www/html/mobilectures-app/platforms/android/ant-build/res/drawable/icon.png \
 /var/www/html/mobilectures-app/platforms/android/ant-build/res/drawable-land-xhdpi/screen.png \
 /var/www/html/mobilectures-app/platforms/android/ant-build/res/drawable-port-hdpi/screen.png \
@@ -26,6 +28,7 @@
 /var/www/html/mobilectures-app/platforms/android/assets/_where-is-www.txt \
 /var/www/html/mobilectures-app/platforms/android/assets/www \
 /var/www/html/mobilectures-app/platforms/android/assets/www/spec \
+/var/www/html/mobilectures-app/platforms/android/assets/www/device.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/plugins \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/index.html \
@@ -45,9 +48,17 @@
 /var/www/html/mobilectures-app/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine.css \
 /var/www/html/mobilectures-app/platforms/android/assets/www/spec/lib/jasmine-1.2.0/MIT.LICENSE \
 /var/www/html/mobilectures-app/platforms/android/assets/www/plugins/org.apache.cordova.device \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/org.apache.cordova.vibration \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.local-notification \
 /var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.background-mode \
 /var/www/html/mobilectures-app/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
 /var/www/html/mobilectures-app/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/org.apache.cordova.vibration/www \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/org.apache.cordova.vibration/www/vibration.js \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.local-notification/www \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-util.js \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js \
+/var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-core.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.background-mode/www \
 /var/www/html/mobilectures-app/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.background-mode/www/background-mode.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/session.js \
@@ -57,6 +68,7 @@
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/dialogs.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/doubts.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/timer.js \
+/var/www/html/mobilectures-app/platforms/android/assets/www/js/vibrate.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/quizzes.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/socket.io.connect.js \
 /var/www/html/mobilectures-app/platforms/android/assets/www/js/login.js \
@@ -80,6 +92,9 @@
 /var/www/html/mobilectures-app/platforms/android/assets/www/img/icon3.gif \
 /var/www/html/mobilectures-app/platforms/android/assets/www/img/logo.png \
 /var/www/html/mobilectures-app/platforms/android/assets/www/img/quiz_image.png \
+/var/www/html/mobilectures-app/platforms/android/assets/www/img/icon-min.ico \
+/var/www/html/mobilectures-app/platforms/android/assets/www/img/icon-min.png \
+/var/www/html/mobilectures-app/platforms/android/assets/www/img/icon.png \
 /var/www/html/mobilectures-app/platforms/android/assets/www/img/loading.gif \
 /var/www/html/mobilectures-app/platforms/android/assets/www/img/icon1.gif \
 /var/www/html/mobilectures-app/platforms/android/assets/www/img/ranking_award.png \
@@ -138,10 +153,11 @@
 /var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/blackberry \
 /var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/ios \
 /var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/android/icon-96-xhdpi.png \
+/var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/android/icon-144-xhdpi.png \
 /var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/android/icon-96-xxxhdpi.png \
+/var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/android/icon-192-xhdpi.png \
 /var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/android/icon-96-xxhdpi.png \
 /var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/android/icon-72-hdpi.png \
-/var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/android/icon-36-ldpi.png \
 /var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/android/icon-48-mdpi.png \
 /var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/windows-phone/icon-62-tile.png \
 /var/www/html/mobilectures-app/platforms/android/assets/www/res/icon/windows-phone/icon-48.png \

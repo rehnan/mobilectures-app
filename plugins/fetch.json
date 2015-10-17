@@ -15,5 +15,40 @@
         },
         "is_top_level": false,
         "variables": {}
+    },
+    "cordova-plugin-vibration": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-vibration"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "de.appplant.cordova.plugin.local-notification": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/katzer/cordova-plugin-local-notifications",
+            "subdir": ".",
+            "ref": "0.8.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "com.iniciacomunicacion.cordova.devicenotification": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/inigoini/cordova-plugin-device-notification",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
