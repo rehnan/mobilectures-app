@@ -85,7 +85,7 @@ ml.polls = {
 
 	send_answer: function () {
 		$('#form-poll').submit(function() {
-
+			ml.loader.button("send_answer", "Responder Enquete", false);
 			var form = $(this).serializeJSON();
 			var data = {};
 			data.poll = ml.polls.current().id;
@@ -94,7 +94,7 @@ ml.polls = {
 			var url = ml.config.url + '/api/poll_answers'
 			
 			socket.post(url, data, function (data, resp) {
-				
+				ml.loader.button("send_answer", "Responder Enquete", true);
 				if(data.errors) {
 					if(data.errors.alternatives) {
 						ml.flash.error('#page-poll', data.errors.alternatives);

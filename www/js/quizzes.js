@@ -60,7 +60,7 @@ ml.quizzes = {
 
 				if (quiz.status === 'closed') { 
 					image_quiz = "<img src='img/ranking_award.png'>";
-				 	button_option = "<a href='#' title='Visualizar Estatísticas' data-quiz-id='"+quiz.id+"' data-listener-id='"+ml.session.user.current().id+"' class='get_ranking ui-btn ui-btn-icon-notext ui-icon-star ui-btn-a' data-transition='pop' data-index-quiz="+index+"  aria-expanded='false'></a>"; 
+				 	button_option = "<a href='#' title='Visualizar Estatísticas' data-quiz-id='"+quiz.id+"' data-listener-id='"+ml.session.user.current().id+"' class='get_ranking ui-btn ui-btn-icon-notext ui-icon-search ui-btn-a' data-transition='pop' data-index-quiz="+index+"  aria-expanded='false'></a>"; 
 				}
 
 				var li_quiz = "<li class='ui-li-has-alt ui-li-has-thumb ui-first-child'>" +
@@ -158,6 +158,7 @@ render_question: function (quiz) {
 
 send_answer: function () {
 	$('#form-quiz').submit(function() {
+		ml.loader.button("send_answer_quiz", "Responder Quiz", false);
 		console.log('Sending answer...');
 		var form = $(this).serializeJSON();
 
@@ -174,7 +175,7 @@ send_answer: function () {
 		var url = ml.config.url + '/api/quiz_answers'
 
 		socket.post(url, form, function (data, resp) {
-
+			ml.loader.button("send_answer_quiz", "Responder Quiz", true);
 			ml.flash.clear_this_page('#page-quiz');
 			if(data.errors) {
 				if(data.errors.alternative) {

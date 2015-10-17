@@ -45,12 +45,15 @@ formatDate: function(date) {
 
   send_doubt: function() {
      $("#form-doubt").submit(function(){
+      //Disable button send_doubt
+      ml.loader.button("send_doubt", "Enviar Dúvida", false);
+
       var params = $(this).serializeJSON();
       params.doubt.listener = ml.session.user.current().id;
       params.doubt.session = ml.session.user.current().logged_room;
       console.log(params);
       var url = ml.config.url + "/api/doubts";
-             //alert(JSON.stringify(params));
+             ml.loader.button("send_doubt", "Enviar Dúvida", true);
 
              socket.post(url, params, function (data, jwres) {
                 var status_code = jwres.statusCode;
@@ -70,6 +73,7 @@ formatDate: function(date) {
                    ml.flash.success('#page-doubt', 'Dúvida enviada com sucesso! ');
              //ml.flash.clear();
              ml.forms.clear('#form-doubt');
+             
              //Redireciona $.mobile.changePage('#page-sign-in');
           }
        });

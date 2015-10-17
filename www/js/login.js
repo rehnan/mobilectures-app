@@ -41,12 +41,15 @@ ml.login = {
    sign_in: function () {
 
       $('#form-sign-in').submit(function() {
-         
+         $('#btn_login').attr("disabled", "disabled").enhanceWithin();
+         $('#btn_login').html("Efetuando Login...").enhanceWithin();
+
          var account = $(this).serializeJSON();
-         
          var url = ml.config.url + '/api/listeners/join';
 
          socket.post(url, account , function (data, jwres) {
+            $('#btn_login').removeAttr("disabled", "disabled").enhanceWithin();
+            $('#btn_login').html("Login").enhanceWithin();
             if (data.authorization == "authorized") {
                
                
