@@ -34,7 +34,6 @@
 /var/www/html/mobilectures-app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/notification/ClickActivity.class \
 /var/www/html/mobilectures-app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/notification/AbstractRestoreReceiver.class \
 /var/www/html/mobilectures-app/platforms/android/ant-build/classes/de/appplant/cordova/plugin/notification/Builder.class \
-/var/www/html/mobilectures-app/platforms/android/ant-build/classes/com/iniciacomunicacion/devicenotification/DeviceNotification.class \
 /var/www/html/mobilectures-app/platforms/android/ant-build/classes/org/apache/cordova/vibration/Vibration.class \
 /var/www/html/mobilectures-app/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
 /var/www/html/mobilectures-app/platforms/android/ant-build/dexedLibs/classes-56b7564efeea6ccae92b2a7c311680c5.jar \
