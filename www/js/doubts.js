@@ -53,9 +53,10 @@ formatDate: function(date) {
       params.doubt.session = ml.session.user.current().logged_room;
       console.log(params);
       var url = ml.config.url + "/api/doubts";
-             ml.loader.button("send_doubt", "Enviar Dúvida", true);
+             
 
              socket.post(url, params, function (data, jwres) {
+                ml.loader.button("send_doubt", "Enviar Dúvida", true);
                 var status_code = jwres.statusCode;
                 //Append new dount in table
                 //append_doubt(data.doubt, data.index);

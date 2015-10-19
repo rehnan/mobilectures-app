@@ -19,6 +19,14 @@ socket.on("connect", function () {
 	});
 
 	socket.on('reconnect', function () {
+		$('#btn-sign-up').removeAttr("disabled", "disabled").enhanceWithin();
+        $('#btn-sign-up').html("Registrar").enhanceWithin();
+        $('#btn_login').removeAttr("disabled", "disabled").enhanceWithin();
+        $('#btn_login').html("Login").enhanceWithin();
+        ml.loader.button("send_answer", "Responder Enquete", true);
+        ml.loader.button("send_answer_quiz", "Responder Quiz", true);
+        ml.loader.button("send_doubt", "Enviar Dúvida", true);
+
 		var url = ml.config.url + '/api/listeners/join';
 		if(ml.session.user.current()) {
 			var auth = {};
