@@ -12,6 +12,9 @@ ml.login = {
    sign_up: function () {
       $('#form-sign-up').submit(function() {
 
+         $('#btn-sign-up').attr("disabled", "disabled").enhanceWithin();
+         $('#btn-sign-up').html("Registrando Conta...").enhanceWithin();
+
          var data = $(this).serializeJSON();
          var url = ml.config.url + '/api/listeners'
 
@@ -32,6 +35,9 @@ ml.login = {
                ml.forms.showErrors('#form-sign-up', errors, 'user');
             },
          });
+
+         $('#btn-sign-up').removeAttr("disabled", "disabled").enhanceWithin();
+         $('#btn-sign-up').html("Registrar").enhanceWithin();
 
          return false;
       });

@@ -32,12 +32,12 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+   /* onDeviceReady: function() {
          cordova.plugins.notification.local.schedule({
             title: 'Mobilectures',
             text: 'Seja Bem-vindo ao Mobilectures App! (:',
             icon: "res://icon_min.png",
-        });
+        });*/
     },
 
     notification: function(title, text) {
